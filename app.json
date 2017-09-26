@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2E72BF",
+    "navigationBarTitleText": "计日指期",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee"
+  },
+  "tabBar": {
+    "color": "#CCCCCC",
+    "selectedColor": "#00FF00",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "1111"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "222"
+      }
+    ]
+  }
+}

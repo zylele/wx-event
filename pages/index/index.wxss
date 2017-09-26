@@ -1,0 +1,97 @@
+/* pages/index/index.wxss */
+
+.calculator-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  border-radius: 10rpx;
+  background-color: #eee;
+  border: 1.5rpx solid #E3E3E3;
+}
+
+.column-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  background-color: #FAFAFA;
+  border-top: 1.5rpx solid #E3E3E3;
+  border-bottom: 1.5rpx solid #E3E3E3;
+}
+
+.row-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+/* 可激活的日期 */
+
+.text-date-active {
+  font-size: 35rpx;
+  color: #2E72BF;
+}
+
+/* 未激活的日期文本 */
+
+.text-date-dis {
+  align-self: center;
+  font-size: 35rpx;
+  color: #555555;
+}
+
+/* 次要文字 */
+
+.text-sec {
+  color: #ABABAB;
+}
+
+/* 激活的天数input */
+
+.input-number-active {
+  width: 380rpx;
+  height: 70rpx;
+  text-align: right;
+  border-radius: 37rpx 0 0 37rpx;
+  background-color: white;
+  border: 1.5rpx solid #b2b2b2;
+}
+
+/* 天之前之后input */
+
+.input-number-dis {
+  width: 150rpx;
+  height: 70rpx;
+  color: #ABABAB;
+  text-align: center;
+  border-radius: 0 37rpx 37rpx 0;
+  background-color: #eee;
+  border: 1.5rpx solid #b2b2b2;
+}
+
+/* 输出天数文本 */
+
+.text-number-dis {
+  font-size: 60rpx;
+  color: #2E72BF;
+}
+
+/* Days */
+
+.input-days {
+  width: 65rpx;
+  height: 17rpx;
+  color: white;
+  font-size: 25rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  background-color: #BDBDBD;
+  margin-left: 15rpx;
+}
