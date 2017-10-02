@@ -1,28 +1,32 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/history/history"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2E72BF",
     "navigationBarTitleText": "计日指期",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#eeeeee"
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F1F1F1"
   },
   "tabBar": {
-    "color": "#CCCCCC",
-    "selectedColor": "#00FF00",
-    "backgroundColor": "#fff",
+    "color": "#ABABAB",
+    "selectedColor": "#2E72BF",
+    "backgroundColor": "#F9F9F9",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "1111"
+        "text": "计日",
+        "iconPath": "icon/cal.png",
+        "selectedIconPath": "icon/cal2.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "222"
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "icon/his.png",
+        "selectedIconPath": "icon/his2.png"
       }
     ]
   }

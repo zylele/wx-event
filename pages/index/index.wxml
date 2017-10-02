@@ -1,55 +1,65 @@
 <!--pages/index/index.wxml-->
-<view class="container">
-  <view class="calculator-container">
+<view class='container'>
+  <view class='calculator-container'>
 
     <!-- 起始日期 -->
-    <view class="row-container" style="border-radius: 10rpx 10rpx 0 0;background-color: #F7F7F7;">
-      <text class="text-sec" space="nbsp">从  </text>
-      <picker mode="date" value="{{startDate}}" bindchange="changeStartDate">
-        <text class="text-date-active">{{startDate}} {{startWeek}}</text>
-        <text class="text-sec" space="nbsp">  开始 </text>
-        <image src="icon/xiala.png" style="margin-top:10rpx;width: 15px;height: 15px;"></image>
+    <view class='row-container' style='border-radius: 10rpx 10rpx 0 0;background-color: #F7F7F7;'>
+      <text class='text-sec' space='nbsp'>从  </text>
+      <picker mode='date' value='{{startDate}}' bindchange='changeStartDate'>
+        <text class='text-date-active'>{{startDate}} {{startWeek}}</text>
+        <text class='text-sec' space='nbsp'>  开始 </text>
+        <image src='icon/date_arrow.png' style='align:center;width: 18rpx;height: 15rpx;'></image>
       </picker>
     </view>
 
-    <view class="column-container">
+    <view class='column-container'>
 
       <!-- 输入几天之前 -->
-      <view class="row-container">
-        <input class="input-number-active" type="number" maxlength="5" bindinput="changeBeforeDays" value="{{beforeDays}}" />
-        <input class="input-number-dis" space="nbsp" disabled="true" value=" 天之前" />
+      <view class='row-container'>
+        <input class='input-number-active' type='number' maxlength='7' bindinput='changeBeforeDays' />
+        <input class='input-number-dis' space='nbsp' disabled='true' value=' 天之前' />
       </view>
 
       <!-- 展示之前日期 -->
-      <text class="text-date-dis">{{beforeDate}} {{beforeWeek}}</text>
+      <text class='text-date-dis'>{{beforeADOrBC}} {{beforeDate}} {{beforeWeek}}</text>
 
       <!-- 输入几天之后 -->
-      <view class="row-container">
-        <input class="input-number-active" type="number" maxlength="5" bindinput="changeAfterDays" value="{{afterDays}}" />
-        <input class="input-number-dis" space="nbsp" disabled="true" value=" 天之后" />
+      <view class='row-container' style='margin-top: 20rpx;'>
+        <input class='input-number-active' type='number' maxlength='7' bindinput='changeAfterDays' />
+        <input class='input-number-dis' space='nbsp' disabled='true' value=' 天之后' />
       </view>
 
       <!-- 展示之后日期 -->
-      <text class="text-date-dis" style="margin-bottom: 18rpx;">{{afterDate}} {{afterWeek}}</text>
+      <text class='text-date-dis' style='margin-bottom: 20rpx;'>{{afterADOrBC}} {{afterDate}} {{afterWeek}}</text>
 
     </view>
 
     <!-- 距离日期 -->
-    <view class="row-container" style="border-bottom: 1.5rpx solid #E3E3E3;background-color: #F7F7F7;">
-      <text class="text-sec" space="nbsp">距离  </text>
-      <picker mode="date" value="{{distDate}}" bindchange="bindDateChange">
-        <text class="text-date-active">{{distDate}}</text>
-        <text class="text-sec" space="nbsp">  还有 </text>
-        <image src="icon/xiala.png" style="margin-top:10rpx;width: 15px;height: 15px;"></image>
+    <view class='row-container' style='border-bottom: 1.5rpx solid #E3E3E3;background-color: #F7F7F7;'>
+      <text class='text-sec' space='nbsp'>距离  </text>
+      <picker mode='date' bindtap='distDateScroll' value='{{distDate}}' bindchange='changeDistDate'>
+        <text class='text-date-active'>{{distDate}} {{distWeek}} </text>
+        <text class='text-sec' space='nbsp'>  还有 </text>
+        <image src='icon/date_arrow.png' style='align:center;width: 18rpx;height: 15rpx;'></image>
       </picker>
     </view>
 
     <!-- 展示还有几天 -->
-    <view class="row-container" style="border-radius: 0 0 10rpx 10rpx;background-color: #FAFAFA;">
-      <text class="text-number-dis">{{stillDays}}</text>
-      <input class="input-days" disabled="true" value="Days" />
+    <view class='row-container' style='border-radius: 0 0 10rpx 10rpx;background-color: #FAFAFA;'>
+      <text class='text-number-dis'>{{stillDays}}</text>
+      <input class='text-days' value='Days' />
     </view>
 
   </view>
 
+</view>
+
+<!-- 触摸彩蛋 -->
+<view class='container' style='background-color: #F9F9F9;height:260rpx'></view>
+<view class='container' bindtouchstart='showSlogan' bindtouchend='hideSlogan' style='background-color: {{showSlogan ? "#2E72BF" : "#F9F9F9"}};'>
+  <text class='text-slogan'>有些事</text>
+  <text class='text-slogan'>我都已忘记</text>
+  <text class='text-slogan'>但我现在还记得</text>
+  <text class='text-slogan'>-</text>
+  <text class='text-slogan'>嘻嘻</text>
 </view>

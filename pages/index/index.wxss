@@ -8,7 +8,7 @@
   justify-content: center;
   border-radius: 10rpx;
   background-color: #eee;
-  border: 1.5rpx solid #E3E3E3;
+  border: 2rpx solid #CFCDCC;
 }
 
 .column-container {
@@ -18,8 +18,8 @@
   align-items: stretch;
   justify-content: center;
   background-color: #FAFAFA;
-  border-top: 1.5rpx solid #E3E3E3;
-  border-bottom: 1.5rpx solid #E3E3E3;
+  border-top: 2rpx solid #E3E3E3;
+  border-bottom: 2rpx solid #E3E3E3;
 }
 
 .row-container {
@@ -28,8 +28,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-top: 30rpx;
-  padding-bottom: 30rpx;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
 }
 
 /* 可激活的日期 */
@@ -37,6 +37,7 @@
 .text-date-active {
   font-size: 35rpx;
   color: #2E72BF;
+  font-weight: bold;
 }
 
 /* 未激活的日期文本 */
@@ -44,54 +45,70 @@
 .text-date-dis {
   align-self: center;
   font-size: 35rpx;
-  color: #555555;
+  color: #616161;
+  font-weight: bold;
 }
 
 /* 次要文字 */
 
 .text-sec {
   color: #ABABAB;
+  font-weight: bold;
 }
 
 /* 激活的天数input */
 
 .input-number-active {
   width: 380rpx;
-  height: 70rpx;
+  height: 75rpx;
+  color: #2E72BF;
+  font-size: 45rpx;
   text-align: right;
   border-radius: 37rpx 0 0 37rpx;
   background-color: white;
-  border: 1.5rpx solid #b2b2b2;
+  border: 2rpx solid #b2b2b2;
+  padding-right: 15rpx;
 }
 
 /* 天之前之后input */
 
 .input-number-dis {
   width: 150rpx;
-  height: 70rpx;
+  height: 75rpx;
   color: #ABABAB;
   text-align: center;
   border-radius: 0 37rpx 37rpx 0;
   background-color: #eee;
-  border: 1.5rpx solid #b2b2b2;
+  border: 2rpx solid #b2b2b2;
 }
 
 /* 输出天数文本 */
 
 .text-number-dis {
-  font-size: 60rpx;
+  font-size: 50rpx;
+  font-weight: bold;
   color: #2E72BF;
 }
 
-/* Days */
+/* Days标签 */
 
-.input-days {
-  width: 65rpx;
-  height: 17rpx;
+.text-days {
+  width: 70rpx;
+  height: 30rpx;
   color: white;
   font-size: 25rpx;
+  font-weight: bold;
   text-align: center;
-  border-radius: 10rpx;
-  background-color: #BDBDBD;
   margin-left: 15rpx;
+  border-radius: 10rpx;
+  background-color: #b2b2b2;
+  border: 2rpx solid #b2b2b2;
+}
+
+/* 彩蛋文字 */
+
+.text-slogan {
+  align-self: center;
+  font-size: 35rpx;
+  color: #F9F9F9;
 }
