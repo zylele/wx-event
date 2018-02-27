@@ -11,9 +11,13 @@ Page({
     startDate: null,
     startWeek: null,
 
+    beforeDays: '',
+
     beforeADOrBC: '',
     beforeDate: '请输入数字进行计算',
     beforeWeek: '',
+
+    afterDays: '',
 
     afterADOrBC: '',
     afterDate: '请输入数字进行计算',
@@ -50,9 +54,17 @@ Page({
       startWeek: selectDate[2]
     });
     var beforeDays = Number(this.data.beforeDays) || 0;
-    this.calBeforeDate(new Date(selectDate[1]), beforeDays);
+    if (beforeDays > 0) {
+      this.calBeforeDate(new Date(selectDate[1]), beforeDays);
+    }
+
     var afterDays = Number(this.data.afterDays) || 0;
-    this.calAfterDate(new Date(selectDate[1]), afterDays);
+    if (afterDays > 0) {
+      this.calAfterDate(new Date(selectDate[1]), afterDays);
+    }
+
+    this.calDistDays(selectDate[1], this.data.distDate);
+
   },
 
   /**
@@ -63,14 +75,20 @@ Page({
     if (typeof days == 'undefined' || days == '') {
       days = 0;
     }
-    this.calBeforeDate(new Date(this.data.startDate), days);
+    if(days > 0){
+      this.calBeforeDate(new Date(this.data.startDate), days);
+      this.setData({
+        beforeDays: days
+      })
+    }
+    
   },
 
   /**
    * 计算几天之前的日期
    */
   calBeforeDate: function (startDate, days) {
-    var beforeDate = util.formatTime(new Date(startDate.getTime() - days * 1000 * 60 * 60 * 24));
+    var beforeDate = util.formatTime(new Date(startDate.getTime() - days * 86400000));
     this.setData({
       beforeADOrBC: beforeDate[0],
       beforeDate: beforeDate[1],
@@ -86,7 +104,12 @@ Page({
     if (typeof days == 'undefined' || days == '') {
       days = 0;
     }
-    this.calAfterDate(new Date(this.data.startDate), days);
+    if (days > 0) {
+      this.calAfterDate(new Date(this.data.startDate), days);
+      this.setData({
+        afterDays: days
+      })
+    }
   },
 
   /**
@@ -116,14 +139,13 @@ Page({
   changeDistDate: function (e) {
     var selectDate = new Date(e.detail.value);
     var distDate = util.formatTime(selectDate);
-    var now = util.formatTime(new Date());
-    var stillDays = (new Date(distDate[1]).getTime() - new Date(now[1]).getTime()) / 86400000;
 
     this.setData({
       distDate: distDate[1],
-      distWeek: distDate[2],
-      stillDays: stillDays
+      distWeek: distDate[2]
     });
+
+    this.calDistDays(this.data.startDate, distDate[1]);
 
     wx.pageScrollTo({
       scrollTop: 0
@@ -131,6 +153,16 @@ Page({
 
     // 检测彩蛋
     this.checkDistDateEgg(selectDate);
+  },
+
+  /**
+   * 计算距离日期间隔
+   */
+  calDistDays: function (startDate, distDate) {
+    var stillDays = (new Date(distDate).getTime() - new Date(startDate).getTime()) / 86400000;
+    this.setData({
+      stillDays: stillDays
+    });
   },
 
   /**

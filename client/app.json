@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/history/history"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -9,25 +8,5 @@
     "navigationBarTitleText": "计日指期",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#F1F1F1"
-  },
-  "tabBar": {
-    "color": "#ABABAB",
-    "selectedColor": "#2E72BF",
-    "backgroundColor": "#F9F9F9",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "计日",
-        "iconPath": "icon/cal.png",
-        "selectedIconPath": "icon/cal2.png"
-      },
-      {
-        "pagePath": "pages/history/history",
-        "text": "历史",
-        "iconPath": "icon/his.png",
-        "selectedIconPath": "icon/his2.png"
-      }
-    ]
   }
 }

@@ -16,7 +16,7 @@
 
       <!-- 输入几天之前 -->
       <view class='row-container'>
-        <input class='input-number-active' type='number' maxlength='7' bindinput='changeBeforeDays' />
+        <input class='input-number-active' type='number' maxlength='7' value='{{beforeDays}}' bindinput='changeBeforeDays' />
         <input class='input-number-dis' space='nbsp' disabled='true' value=' 天之前' />
       </view>
 
