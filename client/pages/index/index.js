@@ -169,12 +169,16 @@ Page({
    * 距离日期彩蛋
    */
   checkDistDateEgg: function (date) {
+    if (date < new Date()){
+      return;
+    }
+
     var month = date.getMonth() + 1;
     var day = date.getDate();
+
     if (month == 7 && day == 6) {//乐乐生日
       var year = date.getFullYear();
-      var nowYear = new Date().getFullYear();
-      if (year > nowYear && year <= 2092) {
+      if (year <= 2092) {
         wx.showModal({
           title: '这一天有大事',
           content: '提前祝计日指期开发者乐乐生日快乐',
@@ -183,8 +187,7 @@ Page({
       }
     } else if (month == 7 && day == 31) {//毛毛生日
       var year = date.getFullYear();
-      var nowYear = new Date().getFullYear();
-      if (year > nowYear && year <= 2092) {
+      if (year <= 2092) {
         wx.showModal({
           title: '一个彩蛋',
           content: '这一天有大事！',
@@ -234,7 +237,7 @@ Page({
                                     showCancel: false,
                                     success: function (res) {
                                       wx.showLoading({
-                                        title: '正在发送毛毛的爱',
+                                        title: '发送毛毛的爱',
                                         mask: true
                                       });
                                       setTimeout(function () {
